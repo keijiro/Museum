@@ -15,7 +15,7 @@ uint Hash(uint s)
 
 float Random(uint seed)
 {
-    return float(Hash(seed)) / 4294967295.0; // 2^32-1
+    return frac(float(Hash(seed)) / 4294967295.0); // 2^32-1
 }
 
 // Uniformaly distributed points on a unit sphere

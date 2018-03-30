@@ -30,5 +30,8 @@ half4 Frag(VaryingsDefault i) : SV_Target
     float2 uv2 = i.texcoord;
     uv2.x += (Random((uv2.y + _Time.y * 60) * reso.y) - 0.5) * 0.03;
 
-    return SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv1);
+    half4 c = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, uv1);
+    c = saturate(c) * 0.999;
+
+    return frac(c + Random(segment * 331) * 0.1 * mask);
 }
