@@ -13,6 +13,14 @@ public class StatueSwitcher : MonoBehaviour
     public float scrollSpeed { get; set; }
     public float rotationSpeed { get; set; }
 
+    public float alphaCutoff {
+        set { Shader.SetGlobalFloat("_Statue_Cutoff", value); }
+    }
+
+    public float noiseAmplitude {
+        set { Shader.SetGlobalFloat("_Statue_NoiseAmplitude", value); }
+    }
+
     public void Restart()
     {
         _scroll = 0;
