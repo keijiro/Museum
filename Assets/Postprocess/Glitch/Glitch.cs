@@ -10,7 +10,6 @@ namespace Museum
     public sealed class Glitch : PostProcessEffectSettings
     {
         [Range(0, 1)] public FloatParameter intensity = new FloatParameter { value = 0 };
-        public TextureParameter overlay = new TextureParameter();
     }
 
     #endregion
@@ -22,7 +21,6 @@ namespace Museum
         static class ShaderIDs
         {
             internal static readonly int Intensity = Shader.PropertyToID("_Intensity");
-            internal static readonly int OverlayTex = Shader.PropertyToID("_OverlayTex");
         }
 
         public override void Render(PostProcessRenderContext context)
@@ -32,7 +30,6 @@ namespace Museum
 
             var sheet = context.propertySheets.Get(Shader.Find("Hidden/Museum/Glitch"));
             sheet.properties.SetFloat(ShaderIDs.Intensity, settings.intensity);
-            sheet.properties.SetTexture(ShaderIDs.OverlayTex, settings.overlay);
 
             cmd.BlitFullscreenTriangle(context.source, context.destination, sheet, 0);
 

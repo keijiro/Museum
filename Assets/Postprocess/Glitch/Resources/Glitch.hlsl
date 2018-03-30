@@ -1,10 +1,9 @@
 #include "PostProcessing/Shaders/StdLib.hlsl"
 #include "PostProcessing/Shaders/Colors.hlsl"
-#include "../../Common/Shaders/Math.hlsl"
-#include "../../Common/Shaders/SimplexNoise2D.hlsl"
+#include "../../../Common/Shaders/Math.hlsl"
+#include "../../../Common/Shaders/SimplexNoise2D.hlsl"
 
 TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
-TEXTURE2D_SAMPLER2D(_OverlayTex, sampler_OverlayTex);
 
 half _Intensity;
 
