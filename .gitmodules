@@ -1,0 +1,24 @@
+[submodule "Packages/jp.keijiro.danish-statues"]
+	path = Packages/jp.keijiro.danish-statues
+	url = git@github.com:keijiro/DanishStatues.git
+	branch = upm
+[submodule "Packages/jp.keijiro.klak"]
+	path = Packages/jp.keijiro.klak
+	url = git@github.com:keijiro/Klak.git
+	branch = upm
+[submodule "Packages/jp.keijiro.klak.midi"]
+	path = Packages/jp.keijiro.klak.midi
+	url = git@github.com:keijiro/MidiKlak.git
+	branch = upm
+[submodule "Packages/jp.keijiro.klak.spout"]
+	path = Packages/jp.keijiro.klak.spout
+	url = git@github.com:keijiro/KlakSpout.git
+	branch = upm
+[submodule "Packages/jp.keijiro.midi-jack"]
+	path = Packages/jp.keijiro.midi-jack
+	url = git@github.com:keijiro/MidiJack.git
+	branch = upm
+[submodule "Packages/jp.keijiro.three-d-scans"]
+	path = Packages/jp.keijiro.three-d-scans
+	url = git@github.com:keijiro/ThreeDScans.git
+	branch = upm
