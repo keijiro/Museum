@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 114920397312442374}
-  - {fileID: 114605786187143340}
+  - {fileID: 114654741035989684}
   - {fileID: 114158509254121546}
   - {fileID: 114236257191819120}
   - {fileID: 114859180447274524}
@@ -121,7 +121,7 @@ MonoBehaviour:
   kernelSize:
     overrideState: 0
     value: 1
---- !u!114 &114605786187143340
+--- !u!114 &114654741035989684
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -138,22 +138,22 @@ MonoBehaviour:
     value: 1
   preset:
     overrideState: 1
-    value: 7
+    value: 4
   maximumIterationCount:
-    overrideState: 1
-    value: 24
-  resolution:
-    overrideState: 1
-    value: 1
-  thickness:
-    overrideState: 1
-    value: 9
-  maximumMarchDistance:
     overrideState: 0
-    value: 30
+    value: 16
+  resolution:
+    overrideState: 0
+    value: 0
+  thickness:
+    overrideState: 0
+    value: 8
+  maximumMarchDistance:
+    overrideState: 1
+    value: 20
   distanceFade:
     overrideState: 0
-    value: 0.5
+    value: 1
   vignette:
     overrideState: 0
     value: 0.5

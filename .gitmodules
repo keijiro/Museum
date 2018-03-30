@@ -22,3 +22,11 @@
 	path = Packages/jp.keijiro.three-d-scans
 	url = git@github.com:keijiro/ThreeDScans.git
 	branch = upm
+[submodule "Packages/jp.keijiro.kvant.spray-mv"]
+	path = Packages/jp.keijiro.kvant.spray-mv
+	url = git@github.com:keijiro/KvantSprayMV.git
+	branch = upm
+[submodule "Packages/jp.keijiro.kvant.warp"]
+	path = Packages/jp.keijiro.kvant.warp
+	url = git@github.com:keijiro/KvantWarp.git
+	branch = upm
