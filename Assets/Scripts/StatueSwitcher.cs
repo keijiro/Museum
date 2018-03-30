@@ -10,99 +10,57 @@ public class StatueSwitcher : MonoBehaviour
 
     #region Public members
 
-    public bool enableRotation { get; set; }
+    public float scrollSpeed { get; set; }
+    public float rotationSpeed { get; set; }
 
-    public void ChangeModel()
+    public void Restart()
     {
-        // Deactivate all.
-        foreach (var go in _statues) go.SetActive(false);
-
-        // Choose a statue.
-        var next = _statues[Random.Range(0, _statues.Length)];
-
-        // Reset the transform.
-        next.transform.localPosition = Vector3.zero;
-        if (!enableRotation) next.transform.localRotation = Quaternion.identity;
-
-        // Then activate it.
-        next.SetActive(true);
-
-        // Terminate scrolling.
-        _scrolling = false;
+        _scroll = 0;
+        _rotation = 0;
     }
 
-    public void StartScroll()
+    public void Rehash()
     {
-        // Deactivate all.
-        foreach (var go in _statues) go.SetActive(false);
-
-        // Change the state.
-        _scrolling = true;
-        _interval = 0;
+        _scroll = Random.Range(0, StatueCount);
     }
 
     #endregion
 
     #region Private members
 
-    bool _scrolling;
-    float _interval;
+    float _scroll;
+    float _rotation;
 
-    GameObject ChooseFreeStatue()
-    {
-        for (var i = 0; i < 100; i++)
-        {
-            var go = _statues[Random.Range(0, _statues.Length)];
-            if (!go.activeInHierarchy) return go;
-        }
-
-        Debug.LogError("Can't find a free statue.");
-        return _statues[0]; // geez :(
-    }
+    int StatueCount { get { return _statues.Length; } }
 
     #endregion
 
     #region MonoBehaviour implementation
 
-    void Start()
-    {
-        // Activate only the first statue.
-        foreach (var go in _statues) go.SetActive(false);
-        _statues[0].SetActive(true);
-    }
-
     void Update()
     {
-        if (_scrolling)
-        {
-            _interval -= Time.deltaTime;
+        _scroll += scrollSpeed * Time.deltaTime;
+        _rotation += rotationSpeed * Time.deltaTime;
 
-            if (_interval <= 0)
+        var rot = Quaternion.AngleAxis(_rotation, Vector3.up);
+
+        for (var i = 0; i < StatueCount; i++)
+        {
+            var go = _statues[i];
+
+            var x = 5 - 2 * ((i + _scroll) % StatueCount + 0.5f);
+
+            if (x > -5)
             {
-                // Choose the next statue and reset/activate it.
-                var next = ChooseFreeStatue();
-                next.transform.localPosition = Vector3.right * 5;
-                next.SetActive(true);
-
-                _interval = 2;
+                go.SetActive(true);
+                var tr = go.transform;
+                tr.localPosition = Vector3.right * x;
+                tr.localRotation = rot;
             }
-        }
-
-        // Deltas for animation
-        var dt = Time.deltaTime;
-        var dpos = Vector3.right * -dt;
-        var drot = Quaternion.AngleAxis(dt * 90, Vector3.up);
-
-        // Scrolling and animation
-        foreach (var go in _statues)
-        {
-            if (!go.activeInHierarchy) continue;
-
-            var tr = go.transform;
-            if (_scrolling) tr.localPosition += dpos; 
-            if (enableRotation) tr.localRotation = drot * tr.localRotation;
-
-            if (tr.localPosition.x < -5) go.SetActive(false);
+            else
+            {
+                go.SetActive(false);
+            }
         }
     }
 
