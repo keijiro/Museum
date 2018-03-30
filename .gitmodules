@@ -30,3 +30,7 @@
 	path = Packages/jp.keijiro.kvant.warp
 	url = git@github.com:keijiro/KvantWarp.git
 	branch = upm
+[submodule "Packages/jp.keijiro.kino.post-processing"]
+	path = Packages/jp.keijiro.kino.post-processing
+	url = git@github.com:keijiro/Kino.git
+	branch = upm
