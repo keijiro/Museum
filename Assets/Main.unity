@@ -161,7 +161,7 @@ MonoBehaviour:
   _positionAmplitude: 0
   _rotationAmplitude: 0
   _positionScale: {x: 0, y: 0.2, z: 0}
-  _rotationScale: {x: 45, y: 240, z: 60}
+  _rotationScale: {x: 20, y: 90, z: 20}
   _positionFractalLevel: 1
   _rotationFractalLevel: 2
 --- !u!1 &69926713
@@ -4963,18 +4963,7 @@ MonoBehaviour:
   _toVector: {x: 0, y: 1, z: 0}
   _vectorEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 169382715}
-        m_MethodName: set_position
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: Klak.Wiring.NodeBase+Vector3Event, jp.keijiro.klak.Runtime, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1772970103
@@ -5746,7 +5735,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2006179712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 543ddbe12367a4899b011d43ef41f357, type: 3}
   m_Name: 
