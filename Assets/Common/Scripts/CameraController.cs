@@ -15,10 +15,10 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        var fov = Mathf.Lerp(12, 120, _parameter);
+        var fov = Mathf.Lerp(11, 120, _parameter);
 
         var tan =
-            Mathf.Tan(12 * Mathf.Deg2Rad / 2) /
+            Mathf.Tan(11 * Mathf.Deg2Rad / 2) /
             Mathf.Tan(fov * Mathf.Deg2Rad / 2);
 
         var dist = tan * 10 - 0.2f * _parameter;
